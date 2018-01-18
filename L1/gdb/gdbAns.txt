@@ -1,0 +1,47 @@
+etox.c 
+
+	COMPILE and RUN
+
+	compile it by "gcc -g etox.c"
+	run it by ./a.out
+	when it ask for x and n. I put 2, 1
+	where the result should be 2 but it result is inf
+	which is not currect.
+
+	DEBUG
+
+	gdb a.out to got the the gdb debuging mode.
+	break etox.c:51 to put a breakpoint to line 51. 
+	run to run the program in gdb.
+	print fact to print the value of the fact. 
+
+	FIX
+	the reason the result shows as inf because we have problem with the function function
+	where the value is 0. which get multiply to anything should result to 0
+	at the end we whe the function result get devided by 0 we get the result of inf.
+	we can fix it by change the value to 1
+
+g1.c
+	COMPILE and RUN
+
+	compile it by "gcc -g g1.c"
+	run it by ./a.out
+	the program does not run or runs forever. 
+
+	DEBUG
+
+	gdb a.out to the start the debug
+	I put different break point by using break etox.c:12
+	I also put the break point at break etox.c:9
+	I also tried to continue but it does not work
+
+	FIX
+
+	the reason the code goes into running forever because the stack has a infinate loop
+	where while loop never not EOF so it goes to the infinate loop. 
+g2.c
+	COMPILE and RUN
+	compile it by "gcc -g g1.c"
+	run it by ./a.out
+	the program does not run or runs forever. 
+	
