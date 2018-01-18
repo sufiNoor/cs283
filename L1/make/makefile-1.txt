@@ -1,23 +1,22 @@
 # Run 'make', then 'touch one.h' and 'make' again.
 
-CC=cc
+CC=cc #defining the variable
 
-all: one
+all: one # all is a phony target where it looks for target that isn't a file
 
-one: one.o main.o two.o three.o
-	${CC} one.o main.o two.o three.o -o one
+one: one.o main.o two.o three.o # one is the target where we have multiple prereq one.o main.o two.o three.o 
+	${CC} one.o main.o two.o three.o -o one # it compiles into the excituable file
 
-one.o: ext.h one.h one.c
-	${CC} -c one.c
+one.o: ext.h one.h one.c # one.o is a target and ext.h, ext.h, one.h, one.c are the multiple prereq
 
-main.o: ext.h one.h main.c
-	${CC} -c main.c
+main.o: ext.h one.h main.c # main.o is the target with multiple prereq. 
+	${CC} -c main.c # compiling and runing the main.c program. 
 
-two.o: one.h two.c
-	${CC} -c two.c
+two.o: one.h two.c # two.o trarget is created by two prereq which are one.h and two.c
+	${CC} -c two.c # compilingg and run the two.c
 
-three.o: one.h three.c
+three.o: one.h three.c #three.o is the target with multiple prerez
 	${CC} -c three.c
 
-clean:
+clean: #clearning up the work by removing all the file name with .o at the end
 	rm -f one *.o

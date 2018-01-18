@@ -1,13 +1,13 @@
-PROG=	test
-OBJS=	one.o main.o two.o three.o
+PROG=	test #variables
+OBJS=	one.o main.o two.o three.o #variable with file names.
 
-#CFLAGS=	-Wall -g
+#CFLAGS=	-Wall -g 
 
-all: ${PROG}
+all: ${PROG} #phony target with prerequesit. 
 
-${PROG}: ${OBJS}
-	@echo $@ depends on $?
-	${CC} ${LDFLAGS} ${OBJS} -o ${PROG}
+${PROG}: ${OBJS} # test is the target and all the files with .o are the prereqs. 
+	@echo $@ depends on $? # $@ is the target name where $@ print to the target, Depends looks at other make file. 
+	${CC} ${LDFLAGS} ${OBJS} -o ${PROG} #compiles and exicute file to the test
 
-clean:
+clean: # remove all the file with the name ends with .o
 	rm -f ls *.o

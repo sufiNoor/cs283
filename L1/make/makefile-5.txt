@@ -8,8 +8,8 @@ ${PROG}: ${OBJS}
 	@echo $@ depends on $?
 	${CC} ${LDFLAGS} ${OBJS} -o ${PROG}
 
-%.o: %.c ext.h one.h
-	$(CC) -c $(CFLAGS) -o $@ $<
+%.o: %.c ext.h one.h # % teach the make file how to convert .o to a .c file. 
+	$(CC) -c $(CFLAGS) -o $@ $< # it compling and making a excituable file. 
 
-clean:
-	rm -f ${PROG} ${OBJS}
+clean: # phony target clear
+	rm -f ${PROG} ${OBJS # it remove all the files name test and .o
